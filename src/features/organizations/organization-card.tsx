@@ -19,17 +19,17 @@ export const OrganizationCard = ({
 }: OrganizationCardProps) => {
   return (
     <OrganizationDialog id={id}>
-      <Card className="cursor-pointer">
+      <Card className="cursor-pointer group hover:border-primary/20">
         <CardHeader>
           <CardTitle className="break-words">{short_name || name}</CardTitle>
           <CardDescription>{short_name && name}</CardDescription>
         </CardHeader>
         <CardContent>
-          <Avatar className="m-auto w-[80px] h-[80px] sm:w-[150px] sm:h-[150px]">
+          <Avatar className="m-auto w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] group-hover:scale-110 transition-transform duration-300 ease-in-out">
             <AvatarImage
               src={logo_url}
               alt={name}
-              className="bg-white object-contain"
+              className="bg-white object-contain p-1"
             />
             <AvatarFallback className="text-5xl">
               {name.split(" ", 2).map((word) => word[0].toUpperCase())}

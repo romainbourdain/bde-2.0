@@ -8,7 +8,7 @@ export const Providers = ({ children }: PropsWithChildren) => {
   return (
     <ThemeProvider defaultTheme="system" attribute="class" enableSystem>
       {children}
-      <Toaster />
+      <Toaster richColors expand toastOptions={{ duration: 1000 }} />
     </ThemeProvider>
   );
 };
