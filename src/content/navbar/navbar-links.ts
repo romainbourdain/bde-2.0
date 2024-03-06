@@ -45,8 +45,8 @@ export const navbarLinks: NavbarLinkGroup[] = [
     links: [
       {
         icon: Briefcase,
-        label: navbarText.links.doNotForget,
-        href: "/do-not-forget",
+        label: navbarText.links.dontForget,
+        href: "/dont-forget",
       },
       {
         icon: Waves,
