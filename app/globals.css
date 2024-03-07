@@ -81,4 +81,31 @@
   h2 {
     @apply text-3xl font-bold;
   }
+
+  section {
+    @apply m-auto max-w-[1200px] w-full px-6 sm:px-10 py-20;
+  }
+
+  .curve {
+    position: relative;
+  }
+
+  .curve::after,
+  .curve::before {
+    position: absolute;
+    left: 0;
+    content: "";
+    mask: url("/images/layout/curve.svg");
+    height: 150px;
+    width: 100%;
+    mask-repeat: no-repeat;
+  }
+
+  .curve::after {
+    top: 100%;
+  }
+
+  .curve::before {
+    top: 0;
+  }
 }
