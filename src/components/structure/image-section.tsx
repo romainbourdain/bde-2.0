@@ -1,3 +1,4 @@
+import { translateLeftAnimation } from "@/animations/translate";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
@@ -11,15 +12,6 @@ export type ImageSideSectionProps = PropsWithChildren<{
   className?: string;
   imageClassName?: string;
 }>;
-
-const imageAnimation = {
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.3, delay: 0.3 },
-  },
-  hidden: { opacity: 0, x: 10 },
-};
 
 export const ImageSideSection = ({
   children,
@@ -36,7 +28,7 @@ export const ImageSideSection = ({
     >
       <h1 className="lg:hidden">{title}</h1>
       <AnimatedFrame
-        variants={imageAnimation}
+        variants={translateLeftAnimation}
         className={cn(
           side === "right" ? "lg:order-last" : "lg:order-first",
           order === "last" && "order-last"

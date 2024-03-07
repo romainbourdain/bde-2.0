@@ -1,3 +1,4 @@
+import { scaleAnimation } from "@/animations/scale";
 import { AnimatedFrame } from "@/components/animated-frame";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -12,15 +13,6 @@ import { OrganizationDialog } from "./organization-dialog";
 
 export type OrganizationCardProps = {} & Organization;
 
-const cardAnimation = {
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.3 },
-  },
-  hidden: { opacity: 0, scale: 0.5 },
-};
-
 export const OrganizationCard = ({
   short_name,
   name,
@@ -28,9 +20,9 @@ export const OrganizationCard = ({
   id,
 }: OrganizationCardProps) => {
   return (
-    <AnimatedFrame variants={cardAnimation}>
+    <AnimatedFrame variants={scaleAnimation}>
       <OrganizationDialog id={id}>
-        <Card className="cursor-pointer group hover:border-primary/20">
+        <Card className="cursor-pointer group hover:border-primary/20 h-full">
           <CardHeader>
             <CardTitle className="break-words">{short_name || name}</CardTitle>
             <CardDescription>{short_name && name}</CardDescription>

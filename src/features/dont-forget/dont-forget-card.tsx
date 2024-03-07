@@ -1,3 +1,4 @@
+import { scaleAnimation } from "@/animations/scale";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { useAnimateInView } from "@/hooks/useAnimateInView";
 import { motion } from "framer-motion";
@@ -7,21 +8,12 @@ export type DontForgetCardProps = {
   description: string;
 };
 
-const variants = {
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.2 },
-  },
-  hidden: { opacity: 0, scale: 0.5 },
-};
-
 export const DontForgetCard = ({ icon, description }: DontForgetCardProps) => {
   const { ref, controls } = useAnimateInView();
   return (
     <motion.div
       initial="hidden"
-      variants={variants}
+      variants={scaleAnimation}
       ref={ref}
       animate={controls}
     >
