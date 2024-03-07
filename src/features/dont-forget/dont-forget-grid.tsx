@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { useAnimateInView } from "@/hooks/useAnimateInView";
+import { motion } from "framer-motion";
 import { DontForgetCard, DontForgetCardProps } from "./dont-forget-card";
 
 export type DontForgetGridProps = {
@@ -19,23 +18,10 @@ const variants = {
 };
 
 export const DontForgetGrid = ({ items }: DontForgetGridProps) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
+  const { ref, controls } = useAnimateInView();
 
   return (
-    <motion.div
-      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-      animate={controls}
-      initial="hidden"
-      variants={variants}
-      ref={ref}
-    >
+    <motion.div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {items.map((item, index) => (
         <DontForgetCard key={index} {...item} />
       ))}
