@@ -1,3 +1,4 @@
+import { AnimatedFrame } from "@/components/animated-frame";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -11,6 +12,15 @@ import { OrganizationDialog } from "./organization-dialog";
 
 export type OrganizationCardProps = {} & Organization;
 
+const cardAnimation = {
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.3 },
+  },
+  hidden: { opacity: 0, scale: 0.5 },
+};
+
 export const OrganizationCard = ({
   short_name,
   name,
@@ -18,25 +28,27 @@ export const OrganizationCard = ({
   id,
 }: OrganizationCardProps) => {
   return (
-    <OrganizationDialog id={id}>
-      <Card className="cursor-pointer group hover:border-primary/20">
-        <CardHeader>
-          <CardTitle className="break-words">{short_name || name}</CardTitle>
-          <CardDescription>{short_name && name}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Avatar className="m-auto w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] group-hover:scale-110 transition-transform duration-300 ease-in-out">
-            <AvatarImage
-              src={logo_url}
-              alt={name}
-              className="bg-white object-contain p-1"
-            />
-            <AvatarFallback className="text-5xl">
-              {name.split(" ", 2).map((word) => word[0].toUpperCase())}
-            </AvatarFallback>
-          </Avatar>
-        </CardContent>
-      </Card>
-    </OrganizationDialog>
+    <AnimatedFrame variants={cardAnimation}>
+      <OrganizationDialog id={id}>
+        <Card className="cursor-pointer group hover:border-primary/20">
+          <CardHeader>
+            <CardTitle className="break-words">{short_name || name}</CardTitle>
+            <CardDescription>{short_name && name}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Avatar className="m-auto w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] group-hover:scale-110 transition-transform duration-300 ease-in-out">
+              <AvatarImage
+                src={logo_url}
+                alt={name}
+                className="bg-white object-contain p-1"
+              />
+              <AvatarFallback className="text-5xl">
+                {name.split(" ", 2).map((word) => word[0].toUpperCase())}
+              </AvatarFallback>
+            </Avatar>
+          </CardContent>
+        </Card>
+      </OrganizationDialog>
+    </AnimatedFrame>
   );
 };
