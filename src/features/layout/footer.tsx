@@ -11,8 +11,8 @@ import { Author } from "../footer/author";
 export const Footer = () => {
   return (
     <footer className="text-lg">
-      <div className="w-full bg-secondary/30 border-y py-10">
-        <div className="flex justify-between max-w-[1200px] px-7 w-full m-auto">
+      <div className="w-full bg-secondary/30 border-y py-10 px-6">
+        <div className="flex flex-wrap justify-between max-w-[1200px] px-7 w-full m-auto gap-10 flex-col items-center text-center sm:flex-row sm:items-start sm:text-start">
           {footerLinks.map((section, i) => (
             <div key={i} className="flex flex-col gap-5">
               <h3>{section.title}</h3>
@@ -31,7 +31,7 @@ export const Footer = () => {
           ))}
           <div className="flex flex-col gap-5">
             <h3>{footerContact.title}</h3>
-            <div className="flex gap-5 items-center">
+            <div className="flex gap-5 items-center justify-center sm:justify-start">
               {footerContact.links.map(({ icon: Icon, ...link }, i) => (
                 <div key={i}>
                   <Link
@@ -45,7 +45,7 @@ export const Footer = () => {
               ))}
             </div>
             <h3>{footerInsidePSBS.title}</h3>
-            <div className="flex gap-5 items-center">
+            <div className="flex gap-5 items-center justify-center sm:justify-start">
               {footerInsidePSBS.links.map((link, i) => (
                 <div key={i}>
                   <Link
@@ -66,8 +66,8 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-secondary/50 py-10">
-        <div className="flex justify-between max-w-[1000px] w-full m-auto">
+      <div className="w-full bg-secondary/50 py-10 px-6">
+        <div className="flex justify-between max-w-[1000px] w-full m-auto flex-col sm:flex-row items-center sm:items-start text-center sm:text-start gap-10">
           <div className="flex flex-col gap-5">
             <div className="flex flex-col">
               <h3>{footerInformations.title}</h3>

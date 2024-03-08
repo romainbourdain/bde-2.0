@@ -27,7 +27,7 @@ export default function OrganizationsPage() {
   if (error || !data) return <h1>Error</h1>;
 
   return (
-    <div className="flex flex-col gap-y-20 max-w-[1200px] w-full">
+    <div className="flex flex-col gap-y-20 max-w-[1200px] px-6 w-full">
       <div className="flex flex-col gap-10">
         <h1>Les associations</h1>
         <OrganizationGrid>
