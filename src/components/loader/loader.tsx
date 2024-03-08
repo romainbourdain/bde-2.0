@@ -7,7 +7,7 @@ export const Loader = () => {
       animationData={lottieLoader}
       loop
       autoPlay
-      className="w-[500px] m-auto"
+      className="w-[250px] m-auto"
     />
   );
 };

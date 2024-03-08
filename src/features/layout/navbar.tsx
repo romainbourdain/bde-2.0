@@ -19,7 +19,7 @@ import ThemeToggle from "../theme/ThemeToggle";
 
 export const Navbar = () => {
   return (
-    <nav className="fixed top-0 w-full flex z-50 justify-between px-4 py-2 items-center bg-background text-foreground">
+    <nav className="fixed top-0 w-full flex z-50 justify-between px-4 py-2 items-center bg-background text-foreground border-b">
       <Link href="/" className="flex items-center gap-2">
         <Image
           src="/images/logo.jpg"
