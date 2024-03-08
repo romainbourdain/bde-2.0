@@ -121,7 +121,7 @@ export const footerInsidePSBS = {
     {
       name: "App Store",
       image: "/images/app-store.svg",
-      url: "https://apps.apple.com/fr/",
+      url: "https://apps.apple.com/fr/app/insidepsbs/id6446891622",
     },
   ],
 };
