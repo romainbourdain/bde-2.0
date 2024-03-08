@@ -82,6 +82,14 @@
     @apply text-3xl font-bold;
   }
 
+  h3 {
+    @apply text-2xl font-bold;
+  }
+
+  h4 {
+    @apply text-xl font-bold;
+  }
+
   section {
     @apply m-auto max-w-[1200px] w-full px-6 sm:px-10 py-20;
   }
