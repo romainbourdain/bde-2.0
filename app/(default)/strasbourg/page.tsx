@@ -12,7 +12,7 @@ import { CardLink } from "@/features/strasbourg/CardLink";
 import { ColumnParagraph } from "@/features/strasbourg/ColumnParagraph";
 import type { PageParams } from "@/types/next";
 
-export default async function RoutePage(props: PageParams<{}>) {
+export default async function StrasbourgPage(props: PageParams<{}>) {
   return (
     <div className="w-full flex flex-col gap-20 items-center">
       <ImageSideSection

@@ -15,7 +15,7 @@ export const footerLinks = [
       },
       {
         name: "Intranet Etudiant",
-        url: "https://intra-etu.telecom-ps.unistra.fr/",
+        url: "https://etu.telecom-ps.unistra.fr/doku.php?id=start",
       },
       {
         name: "Moodle",

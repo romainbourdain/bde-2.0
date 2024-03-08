@@ -1,3 +1,4 @@
+import { footerInformations, footerLegal } from "@/content/footer/footer-legal";
 import {
   footerContact,
   footerInsidePSBS,
@@ -69,36 +70,27 @@ export const Footer = () => {
         <div className="flex justify-between max-w-[1000px] w-full m-auto">
           <div className="flex flex-col gap-5">
             <div className="flex flex-col">
-              <h3>Bureau des Étudiants</h3>
+              <h3>{footerInformations.title}</h3>
               <span className="text-muted-foreground">
-                Telecom Physique Strasbourg
+                {footerInformations.subtitle}
               </span>
             </div>
             <Author />
             <span className="text-muted-foreground italic text-base">
-              ©2024 Romain Bourdain - Tous droits réservés
+              {footerInformations.copyrights}
             </span>
           </div>
           <div className="flex flex-col gap-5">
-            <h3>Légal</h3>
-            <Link
-              href=""
-              className="text-muted-foreground text-base hover:underline"
-            >
-              Mentions Légales
-            </Link>
-            <Link
-              href=""
-              className="text-muted-foreground text-base hover:underline"
-            >
-              Contributeurs
-            </Link>
-            <Link
-              href=""
-              className="text-muted-foreground text-base hover:underline"
-            >
-              Licence
-            </Link>
+            <h3>{footerLegal.title}</h3>
+            {footerLegal.links.map((link, i) => (
+              <Link
+                key={i}
+                href={link.url}
+                className="text-muted-foreground text-base hover:underline"
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
