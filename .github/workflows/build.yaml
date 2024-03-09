@@ -38,6 +38,8 @@ jobs:
 
       - name: Deploy to build branch
         run: |
+          git config --global user.email """
+          git config --global user.name "GitHub Actions"
           git checkout -b build
           git add .
           git commit -m "Add build files"
