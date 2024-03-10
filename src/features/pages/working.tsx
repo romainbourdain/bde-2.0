@@ -1,4 +1,4 @@
-export const Working = () => {
+export const WorkingPage = () => {
   return (
     <div className="page-center">
       <div>

@@ -2,7 +2,8 @@
 
 import { OrganizationCard } from "@/features/organizations/organization-card";
 import { OrganizationGrid } from "@/features/organizations/organization-grid";
-import { Loading } from "@/features/pages/loading";
+import { ErrorPage } from "@/features/pages/Error400";
+import { LoadingPage } from "@/features/pages/loading";
 import { Organization } from "@/types/organization";
 import useSwr, { Fetcher } from "swr";
 
@@ -22,9 +23,9 @@ export default function OrganizationsPage() {
     fetcher
   );
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <LoadingPage />;
 
-  if (error || !data) return <h1>Error</h1>;
+  if (error || !data) return <ErrorPage />;
 
   return (
     <div className="page">

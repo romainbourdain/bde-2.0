@@ -1,7 +1,7 @@
 import lottieLoader from "@/../public/lottie/loader.json";
 import Lottie from "lottie-react";
 
-export const Loading = () => {
+export const LoadingPage = () => {
   return (
     <div className="page-center">
       <div className="flex flex-col items-center gap-10">
