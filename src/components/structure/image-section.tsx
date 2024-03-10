@@ -1,4 +1,8 @@
-import { translateLeftAnimation } from "@/animations/translate";
+import { scaleAnimation } from "@/animations/scale";
+import {
+  translateLeftAnimation,
+  translateRightAnimation,
+} from "@/animations/translate";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
@@ -26,9 +30,18 @@ export const ImageSideSection = ({
     <section
       className={cn("flex flex-col lg:flex-row items-center gap-20", className)}
     >
-      <h1 className="lg:hidden">{title}</h1>
       <AnimatedFrame
-        variants={translateLeftAnimation}
+        variants={
+          side === "left" ? translateRightAnimation : translateLeftAnimation
+        }
+        className="lg:hidden"
+      >
+        <h1>{title}</h1>
+      </AnimatedFrame>
+      <AnimatedFrame
+        variants={
+          side === "left" ? translateLeftAnimation : translateRightAnimation
+        }
         className={cn(
           side === "right" ? "lg:order-last" : "lg:order-first",
           order === "last" && "order-last"
@@ -43,8 +56,21 @@ export const ImageSideSection = ({
         />
       </AnimatedFrame>
       <div className="flex-1">
-        <h1 className="hidden lg:block mb-10">{title}</h1>
-        {children}
+        <AnimatedFrame
+          variants={
+            side === "left" ? translateRightAnimation : translateLeftAnimation
+          }
+          className="hidden lg:block"
+        >
+          <h1 className="mb-10">{title}</h1>
+        </AnimatedFrame>
+        <AnimatedFrame
+          variants={
+            side === "left" ? translateRightAnimation : translateLeftAnimation
+          }
+        >
+          {children}
+        </AnimatedFrame>
       </div>
     </section>
   );
@@ -66,14 +92,18 @@ export const ImageCenterSection = ({
 }: ImageCenterSectionProps) => {
   return (
     <section className={cn("flex flex-col items-center gap-20", className)}>
-      <h1 className="text-center">{title}</h1>
-      <Image
-        src={src}
-        alt={`${title} image`}
-        width={1080}
-        height={720}
-        className={imageClassName}
-      />
+      <AnimatedFrame variants={scaleAnimation}>
+        <h1 className="text-center">{title}</h1>
+      </AnimatedFrame>
+      <AnimatedFrame variants={scaleAnimation}>
+        <Image
+          src={src}
+          alt={`${title} image`}
+          width={1080}
+          height={720}
+          className={imageClassName}
+        />
+      </AnimatedFrame>
       {children}
     </section>
   );

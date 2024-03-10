@@ -1,4 +1,9 @@
 import {
+  translateBottomAnimation,
+  translateTopAnimation,
+} from "@/animations/translate";
+import { AnimatedFrame } from "@/components/animated-frame";
+import {
   ImageCenterSection,
   ImageSideSection,
 } from "@/components/structure/image-section";
@@ -14,7 +19,7 @@ import type { PageParams } from "@/types/next";
 
 export default async function StrasbourgPage(props: PageParams<{}>) {
   return (
-    <div className="w-full flex flex-col gap-20 items-center">
+    <div className="page">
       <ImageSideSection
         src="/images/strasbourg/hero.png"
         imageClassName="w-[400px] h-[400px] object-contain"
@@ -31,21 +36,36 @@ export default async function StrasbourgPage(props: PageParams<{}>) {
         >
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
             {transportSection.subsections.map((subsection, index) => (
-              <ColumnParagraph key={index} icon={subsection.icon}>
-                {subsection.description}
-              </ColumnParagraph>
+              <AnimatedFrame
+                variants={{
+                  ...translateTopAnimation,
+                  visible: {
+                    ...translateTopAnimation.visible,
+                    transition: {
+                      ...translateTopAnimation.visible.transition,
+                      delay: 0.3 * index,
+                    },
+                  },
+                }}
+                key={index}
+              >
+                <ColumnParagraph icon={subsection.icon}>
+                  {subsection.description}
+                </ColumnParagraph>
+              </AnimatedFrame>
             ))}
           </div>
           <div className="flex justify-center w-full max-w-[800px] gap-3 m-auto pt-20 border-t">
             {transportSection.links.map((link, index) => (
-              <CardLink
-                key={index}
-                href={link.href}
-                alt={link.alt}
-                imageSrc={link.imageSrc}
-              >
-                {link.description}
-              </CardLink>
+              <AnimatedFrame key={index} variants={translateBottomAnimation}>
+                <CardLink
+                  href={link.href}
+                  alt={link.alt}
+                  imageSrc={link.imageSrc}
+                >
+                  {link.description}
+                </CardLink>
+              </AnimatedFrame>
             ))}
           </div>
         </ImageCenterSection>

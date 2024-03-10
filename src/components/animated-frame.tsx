@@ -8,7 +8,10 @@ export const AnimatedFrame = ({
   children,
   variants,
   className,
-}: PropsWithChildren<{ variants: Variants; className?: string }>) => {
+}: PropsWithChildren<{
+  variants: Variants;
+  className?: string;
+}>) => {
   const { ref, controls } = useAnimateInView();
 
   return (

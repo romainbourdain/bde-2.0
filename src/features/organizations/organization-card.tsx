@@ -1,6 +1,5 @@
 import { scaleAnimation } from "@/animations/scale";
 import { AnimatedFrame } from "@/components/animated-frame";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
   CardContent,
@@ -10,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Organization } from "@/types/organization";
 import { OrganizationDialog } from "./organization-dialog";
+import { OrganizationIcon } from "./organization-icon";
 
 export type OrganizationCardProps = {} & Organization;
 
@@ -28,16 +28,11 @@ export const OrganizationCard = ({
             <CardDescription>{short_name && name}</CardDescription>
           </CardHeader>
           <CardContent>
-            <Avatar className="m-auto w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] group-hover:scale-110 transition-transform duration-300 ease-in-out">
-              <AvatarImage
-                src={logo_url}
-                alt={name}
-                className="bg-white object-contain p-1"
-              />
-              <AvatarFallback className="text-5xl">
-                {name.split(" ", 2).map((word) => word[0].toUpperCase())}
-              </AvatarFallback>
-            </Avatar>
+            <OrganizationIcon
+              src={logo_url}
+              name={name}
+              className="m-auto group-hover:scale-110 transition-transform duration-300 ease-in-out"
+            />
           </CardContent>
         </Card>
       </OrganizationDialog>

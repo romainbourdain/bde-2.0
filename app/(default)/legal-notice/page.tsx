@@ -1,6 +1,6 @@
-import { Working } from "@/features/working";
+import { WorkingPage } from "@/features/pages/working";
 import type { PageParams } from "@/types/next";
 
 export default async function LegalNoticePage(props: PageParams<{}>) {
-  return <Working />;
+  return <WorkingPage />;
 }

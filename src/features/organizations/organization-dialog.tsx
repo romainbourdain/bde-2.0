@@ -15,7 +15,7 @@ export const OrganizationDialog = ({
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent>
+      <DialogContent className="max-w-screen-md">
         <OrganizationInformation id={id} />
       </DialogContent>
     </Dialog>

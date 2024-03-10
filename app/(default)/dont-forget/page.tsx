@@ -26,11 +26,12 @@ const descriptionAnimation = {
 
 export default async function DontForgetPage(props: PageParams<{}>) {
   return (
-    <div className="max-w-[1200px] w-full flex flex-col gap-20 items-center py-20 px-6 sm:px-10">
+    <div className="page">
       <ImageSideSection
         src="/images/dont-forget/hero.png"
         imageClassName="w-[350px] h-[350px] object-contain"
         order="last"
+        className="max-w-screen-lg"
       >
         <TypewriterEffect
           words={headSection.title}

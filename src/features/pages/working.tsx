@@ -1,6 +1,6 @@
-export const Working = () => {
+export const WorkingPage = () => {
   return (
-    <div className="w-full h-full flex items-center justify-center px-5">
+    <div className="page-center">
       <div>
         <h1 className="mb-3">À venir ⚠️🚧🏗️</h1>
         <p className="text-xl text-muted-foreground">
