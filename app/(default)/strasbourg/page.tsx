@@ -14,7 +14,7 @@ import type { PageParams } from "@/types/next";
 
 export default async function StrasbourgPage(props: PageParams<{}>) {
   return (
-    <div className="w-full flex flex-col gap-20 items-center">
+    <div className="page">
       <ImageSideSection
         src="/images/strasbourg/hero.png"
         imageClassName="w-[400px] h-[400px] object-contain"
