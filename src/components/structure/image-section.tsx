@@ -2,7 +2,6 @@ import { scaleAnimation } from "@/animations/scale";
 import {
   translateLeftAnimation,
   translateRightAnimation,
-  translateTopAnimation,
 } from "@/animations/translate";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -93,7 +92,7 @@ export const ImageCenterSection = ({
 }: ImageCenterSectionProps) => {
   return (
     <section className={cn("flex flex-col items-center gap-20", className)}>
-      <AnimatedFrame variants={translateTopAnimation}>
+      <AnimatedFrame variants={scaleAnimation}>
         <h1 className="text-center">{title}</h1>
       </AnimatedFrame>
       <AnimatedFrame variants={scaleAnimation}>

@@ -1,3 +1,4 @@
+import { NextTopLoader } from "@/features/layout/NextTopLoader";
 import { Footer } from "@/features/layout/footer";
 import { Navbar } from "@/features/layout/navbar";
 import { cn } from "@/lib/utils";
@@ -19,6 +20,7 @@ export default async function RootLayout({ children }: LayoutParams<{}>) {
     <html lang="fr" className="h-full">
       <body className={cn("bg-background h-full", inter.className)}>
         <Providers>
+          <NextTopLoader showSpinner={false} />
           <div className="flex flex-col h-full">
             <Navbar />
             <div className="flex-1">{children}</div>

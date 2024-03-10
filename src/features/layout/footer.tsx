@@ -66,7 +66,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-secondary/50 py-10 px-6">
+      <div className="w-full bg-primary/10 py-10 px-6">
         <div className="flex justify-between max-w-[1000px] w-full m-auto flex-col sm:flex-row items-center sm:items-start text-center sm:text-start gap-10">
           <div className="flex flex-col gap-5">
             <div className="flex flex-col">
